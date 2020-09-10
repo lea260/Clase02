@@ -11,16 +11,19 @@ namespace Negocio.Objetos
     {
         private string nombre;
         private string apellido;
+
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
+
         public DataUsuario()
         {
-            this.nombre = "";
-            this.apellido = "";
-
+            
+           
         }
 
         public string nombreCompleto()   // property
         {
-            string fname = this.nombre + this.apellido;
+            string fname = this.Nombre + this.Apellido;
             return fname; 
         }
 
@@ -29,18 +32,8 @@ namespace Negocio.Objetos
         /// datu.Nombre = "juan";
         /// 
         /// </summary>
-        public string Nombre   // property
-        {
-            get { return nombre; }   // get method
-            set { apellido = value; }  // set method
-        }
-
-        public string Apellido   // property
-        {
-            get; set;
-        }
-
-
-
+        /// 
+        
+        
     }
 }

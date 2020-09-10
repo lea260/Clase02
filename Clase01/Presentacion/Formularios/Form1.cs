@@ -26,14 +26,15 @@ namespace Presentacion.Formularios
         private void btnListar_Click(object sender, EventArgs e)
         {
             UsuarioView usuarioView= new UsuarioView();
-            List<DataUsuario> lista = usuarioView.listaUsuario();                        
-            foreach(DataUsuario usr in lista)
+            List<DataUsuario> lista = usuarioView.listaUsuario();
+            dgv.DataSource = lista;
+            /*foreach(DataUsuario usr in lista)
             {
                 int n = dgv.Rows.Add(); //retorna el indice 
-                dgv.Rows[n].Cells[0].Value = usr.Nombre;
-                dgv.Rows[n].Cells[1].Value = usr.Apellido;                
+                dgv.Rows[n].Cells[0].Value = (string) usr.Nombre;
+                dgv.Rows[n].Cells[1].Value = (string) usr.Apellido;                
 
-            }
+            }*/
 
         }
     }
