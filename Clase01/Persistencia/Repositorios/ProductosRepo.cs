@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 using MySql.Data.MySqlClient;
-
+using Persistencia.Entidades;
 
 namespace Persistencia.Repositorios
 {
     public class ProductosRepo
     {
-        public void Listar()
+        public List<ProductoEntidad> ListarProductos()
         {
+            List<ProductoEntidad> list = new List<ProductoEntidad>();
             try
             {
                 MySqlDataReader reader = null;
@@ -24,7 +25,9 @@ namespace Persistencia.Repositorios
                     {
                         string uno = reader.GetString(0);
                         string dos = reader.GetString(1);
-
+                        string tres = reader.GetString(2);
+                        string cuatro = reader.GetString(3);
+                        string cinco = reader.GetString(4);
                     }
                 }
 
@@ -38,6 +41,7 @@ namespace Persistencia.Repositorios
             {
 
             }
+            return list;
         }        
     }
 }

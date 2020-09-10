@@ -1,11 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Presentacion\Presentacion.csproj" />
+    <Reference Include="Persistencia">
+      <HintPath>..\Persistencia\bin\Debug\netstandard2.0\Persistencia.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -25,15 +25,6 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
-      },
-      "Presentacion/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/Presentacion.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Presentacion.dll": {}
-        }
       }
     }
   },
@@ -181,17 +172,11 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
-    },
-    "Presentacion/1.0.0": {
-      "type": "project",
-      "path": "../Presentacion/Presentacion.csproj",
-      "msbuildProject": "../Presentacion/Presentacion.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3",
-      "Presentacion >= 1.0.0"
+      "NETStandard.Library >= 2.0.3"
     ]
   },
   "packageFolders": {
@@ -219,11 +204,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {
-            "C:\\Users\\leandro\\Documents\\Programacion3\\01clase\\Clase01\\Presentacion\\Presentacion.csproj": {
-              "projectPath": "C:\\Users\\leandro\\Documents\\Programacion3\\01clase\\Clase01\\Presentacion\\Presentacion.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
