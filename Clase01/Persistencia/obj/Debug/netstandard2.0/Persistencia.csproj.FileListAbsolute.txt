@@ -19,4 +19,3 @@ C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Persistencia\obj\Debug\
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Persistencia\obj\Debug\netstandard2.0\Persistencia.csproj.CopyComplete
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Persistencia\obj\Debug\netstandard2.0\Persistencia.dll
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Persistencia\obj\Debug\netstandard2.0\Persistencia.pdb
-C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Persistencia\obj\Debug\netstandard2.0\Persistencia.csprojAssemblyReference.cache

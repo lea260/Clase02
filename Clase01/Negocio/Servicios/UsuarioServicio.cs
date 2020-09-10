@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Negocio.Objetos;
-using Negocio.Servicios;
+
 
 namespace Negocio.Servicios
 {
@@ -15,7 +15,7 @@ namespace Negocio.Servicios
         {
 
         }
-        public List<DataUsuario> obtenerUsuario()
+        public List<DataUsuario> obtenerUsuarios()
         {
             List<DataUsuario> lista= new List<DataUsuario> ();
             DataUsuario usuario1 = new DataUsuario();

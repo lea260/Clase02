@@ -22,7 +22,7 @@ namespace Negocio.Objetos
            
         }
 
-        public string nombreCompleto()   // property
+        public string NombreCompleto()   // property
         {
             string fname = this.Nombre + this.Apellido;
             return fname; 

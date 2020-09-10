@@ -25,3 +25,6 @@ C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\bin\Debug\
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\bin\Debug\MySql.Data.xml
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\Presentacion.exe.config
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\Presentacion.Formularios.FormInicio.resources
+C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\bin\Debug\Persistencia.dll
+C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\bin\Debug\Persistencia.pdb
+C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache

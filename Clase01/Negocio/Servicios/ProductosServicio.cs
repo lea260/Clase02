@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using Negocio.Objetos;
+using Persistencia.Repositorios;
+using Persistencia.Entidades;
 
 namespace Negocio.Servicios
 {
@@ -29,7 +31,9 @@ namespace Negocio.Servicios
             prod2.Codigo = "codigo02";
             prod2.Descripcion = "descripcion02";
             prod2.Precio = "descripcion02";
-            lista.Add(prod2); 
+            lista.Add(prod2);
+            ProductosRepo prodRep = new ProductosRepo();
+            List<ProductoEntidad> list2 = prodRep.ListarProductos();
             
             return lista;
         }
