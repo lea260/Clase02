@@ -33,7 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
     <Reference Include="Negocio">
       <HintPath>..\Negocio\bin\Debug\netstandard2.0\Negocio.dll</HintPath>
     </Reference>
@@ -96,12 +95,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
-      <Project>{265ab625-c444-4931-9f9b-8bdc56bc83f8}</Project>
-      <Name>Persistencia</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

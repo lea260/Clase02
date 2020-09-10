@@ -26,21 +26,8 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Persistencia/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Persistencia.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Persistencia.dll": {}
-        }
-      },
       "Presentacion/1.0.0": {
         "type": "project",
-        "dependencies": {
-          "Persistencia": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/Presentacion.dll": {}
         },
@@ -194,11 +181,6 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
-    },
-    "Persistencia/1.0.0": {
-      "type": "project",
-      "path": "../Persistencia/Persistencia.csproj",
-      "msbuildProject": "../Persistencia/Persistencia.csproj"
     },
     "Presentacion/1.0.0": {
       "type": "project",
