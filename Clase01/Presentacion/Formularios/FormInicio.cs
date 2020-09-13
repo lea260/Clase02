@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio.Servicios;
 using Negocio.Objetos;
-
+using System.Security.Cryptography;
+using Presentacion.Helpers;
 
 
 
@@ -30,8 +31,53 @@ namespace Presentacion.Formularios
             //llamo a conexion. 
             ProductosServicio servicio = new ProductosServicio();
             List<DataProducto> list = servicio.obtenerProductos();
-            dgvProductos.DataSource = list;
+            dgvProductos.DataSource = list;            
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //abrir formulario  
+            int indice = -1;
+            try
+            {
+                indice = dgvProductos.CurrentRow.Index;
+            }catch (Exception e)
+            {
+                MessageBox.Show("seleccione un Producto a editar");
+            }
+
+            
+            //hay un indice seleccionado
+            
+            if (indice >-1)
+            {
+                DataProducto prod = new DataProducto();
+                DataGridViewRow fila = dgvProductos.CurrentRow;
+                //prod.Id_productos = (long) fila.Cells[0].Value;
+                prod.Id_productos = (long)fila.Cells[0].Value;
+                prod.Codigo = (string)fila.Cells[1].Value;
+                prod.Descripcion = (string)fila.Cells[2].Value;
+                prod.Precio = (float)fila.Cells[3].Value;
+                prod.Fecha = (DateTime)fila.Cells[4].Value;                
+                Form form = new AgregarProducto(prod, Modo.Actualizar);
+                form.Show();
+            }
             
         }
+
+        /*private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            //abrir formulario
+            DataProducto prod = new DataProducto();
+            DataGridViewRow fila = dgvProductos.CurrentRow;            
+            //prod.Id_productos = (long) fila.Cells[0].Value;
+            prod.Id_productos = (long) fila.Cells[0].Value;
+            prod.Codigo = (string) fila.Cells[1].Value;
+            prod.Descripcion = (string) fila.Cells[2].Value;
+            prod.Precio = (float) fila.Cells[3].Value;
+            prod.Fecha = (DateTime) fila.Cells[4].Value;
+            Form form = new AgregarProducto(prod);
+            form.Show();
+        }*/
     }
 }
