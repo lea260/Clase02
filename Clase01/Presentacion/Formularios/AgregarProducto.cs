@@ -75,5 +75,24 @@ namespace Presentacion.Formularios
         {
             Iniciar();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("seguro que desea\r\n editar", "salir",
+                MessageBoxButtons.YesNoCancel);
+            if (resultado == DialogResult.Yes)
+            {
+                //llamar a agregar 
+                DateTime fecha = dtpfecha.Value.Date;
+                DataProducto prod = new DataProducto();
+                prod.Id_productos = long.Parse(txtid.Text);
+                prod.Codigo = txtcodigo.Text.ToString();
+                prod.Precio = float.Parse(txtprecio.Text.ToString());
+                prod.Descripcion = txtdescription.Text;
+                prod.Fecha = fecha;
+                Producto producto = new Producto();
+                producto.EditarProducto(prod);
+            }
+        }
     }
 }

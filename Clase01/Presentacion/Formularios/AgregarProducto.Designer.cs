@@ -29,18 +29,19 @@
         private void InitializeComponent()
         {
             this.groupProd = new System.Windows.Forms.GroupBox();
-            this.lblid = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpfecha = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.txtid = new System.Windows.Forms.TextBox();
-            this.txtcodigo = new System.Windows.Forms.TextBox();
-            this.txtdescription = new System.Windows.Forms.TextBox();
-            this.txtprecio = new System.Windows.Forms.TextBox();
             this.btntest = new System.Windows.Forms.Button();
+            this.txtprecio = new System.Windows.Forms.TextBox();
+            this.txtdescription = new System.Windows.Forms.TextBox();
+            this.txtcodigo = new System.Windows.Forms.TextBox();
+            this.txtid = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpfecha = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblid = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.groupProd.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,24 +65,70 @@
             this.groupProd.TabStop = false;
             this.groupProd.Text = "Agregar Producto";
             // 
-            // lblid
+            // btntest
             // 
-            this.lblid.AutoSize = true;
-            this.lblid.Location = new System.Drawing.Point(28, 39);
-            this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(19, 17);
-            this.lblid.TabIndex = 0;
-            this.lblid.Text = "Id";
+            this.btntest.Location = new System.Drawing.Point(418, 33);
+            this.btntest.Name = "btntest";
+            this.btntest.Size = new System.Drawing.Size(200, 23);
+            this.btntest.TabIndex = 2;
+            this.btntest.Text = "Test";
+            this.btntest.UseVisualStyleBackColor = true;
+            this.btntest.Click += new System.EventHandler(this.btntest_Click);
             // 
-            // label1
+            // txtprecio
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 78);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Codigo";
-
+            this.txtprecio.Location = new System.Drawing.Point(154, 194);
+            this.txtprecio.Name = "txtprecio";
+            this.txtprecio.Size = new System.Drawing.Size(200, 22);
+            this.txtprecio.TabIndex = 9;
+            // 
+            // txtdescription
+            // 
+            this.txtdescription.Location = new System.Drawing.Point(154, 121);
+            this.txtdescription.Multiline = true;
+            this.txtdescription.Name = "txtdescription";
+            this.txtdescription.Size = new System.Drawing.Size(200, 50);
+            this.txtdescription.TabIndex = 8;
+            // 
+            // txtcodigo
+            // 
+            this.txtcodigo.Location = new System.Drawing.Point(154, 78);
+            this.txtcodigo.Name = "txtcodigo";
+            this.txtcodigo.Size = new System.Drawing.Size(200, 22);
+            this.txtcodigo.TabIndex = 7;
+            // 
+            // txtid
+            // 
+            this.txtid.Location = new System.Drawing.Point(154, 39);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(200, 22);
+            this.txtid.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(31, 194);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Precio";
+            // 
+            // dtpfecha
+            // 
+            this.dtpfecha.Location = new System.Drawing.Point(154, 242);
+            this.dtpfecha.Name = "dtpfecha";
+            this.dtpfecha.Size = new System.Drawing.Size(200, 22);
+            this.dtpfecha.TabIndex = 4;
+            this.dtpfecha.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 247);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 17);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Fecha";
             // 
             // label2
             // 
@@ -92,33 +139,23 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Descripcion";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 247);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Fecha";
-
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(28, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Codigo";
             // 
-            // dtpfecha
+            // lblid
             // 
-            this.dtpfecha.Location = new System.Drawing.Point(154, 242);
-            this.dtpfecha.Name = "dtpfecha";
-            this.dtpfecha.Size = new System.Drawing.Size(200, 22);
-            this.dtpfecha.TabIndex = 4;
-            this.dtpfecha.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 194);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Precio";
- 
+            this.lblid.AutoSize = true;
+            this.lblid.Location = new System.Drawing.Point(28, 39);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(19, 17);
+            this.lblid.TabIndex = 0;
+            this.lblid.Text = "Id";
             // 
             // btnAgregar
             // 
@@ -130,50 +167,22 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // txtid
+            // btnEditar
             // 
-            this.txtid.Location = new System.Drawing.Point(154, 39);
-            this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(200, 22);
-            this.txtid.TabIndex = 6;
-            // 
-            // txtcodigo
-            // 
-            this.txtcodigo.Location = new System.Drawing.Point(154, 78);
-            this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(200, 22);
-            this.txtcodigo.TabIndex = 7;
-            // 
-            // txtdescription
-            // 
-            this.txtdescription.Location = new System.Drawing.Point(154, 121);
-            this.txtdescription.Multiline = true;
-            this.txtdescription.Name = "txtdescription";
-            this.txtdescription.Size = new System.Drawing.Size(200, 50);
-            this.txtdescription.TabIndex = 8;
-            // 
-            // txtprecio
-            // 
-            this.txtprecio.Location = new System.Drawing.Point(154, 194);
-            this.txtprecio.Name = "txtprecio";
-            this.txtprecio.Size = new System.Drawing.Size(200, 22);
-            this.txtprecio.TabIndex = 9;
-            // 
-            // btntest
-            // 
-            this.btntest.Location = new System.Drawing.Point(418, 33);
-            this.btntest.Name = "btntest";
-            this.btntest.Size = new System.Drawing.Size(200, 23);
-            this.btntest.TabIndex = 2;
-            this.btntest.Text = "Test";
-            this.btntest.UseVisualStyleBackColor = true;
-            this.btntest.Click += new System.EventHandler(this.btntest_Click);
+            this.btnEditar.Location = new System.Drawing.Point(177, 388);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 2;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // AgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1091, 461);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.groupProd);
             this.Name = "AgregarProducto";
@@ -199,5 +208,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.TextBox txtprecio;
         private System.Windows.Forms.Button btntest;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

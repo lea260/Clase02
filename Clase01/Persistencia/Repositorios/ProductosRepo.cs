@@ -86,5 +86,38 @@ namespace Persistencia.Repositorios
                 }
             }
         }
+
+
+        public void EditarProducto(ProductoEntidad entidad)
+        {
+            MySqlConnection conexion = null;
+            try
+            {
+                conexion = ConexionDB.GetConexion();
+                conexion.Open();
+
+                string sql = "UPDATE productos SET codigo=@codigo, descripcion=@descripcion, "+ 
+                    "precio= @precio, fecha= @fecha WHERE id_productos= @id";
+                MySqlCommand comando = new MySqlCommand(sql, conexion);
+                comando.Parameters.AddWithValue("@codigo", entidad.Codigo);
+                comando.Parameters.AddWithValue("@descripcion", entidad.Descripcion);
+                comando.Parameters.AddWithValue("@precio", entidad.Precio);
+                comando.Parameters.AddWithValue("@fecha", entidad.Fecha);
+                comando.Parameters.AddWithValue("@id", entidad.Id_productos);
+                comando.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                string mensaje = ex.ToString();
+                Console.WriteLine("hola" + mensaje);
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.Close();
+                }
+            }
+        }
     }//end clase
 }//end namespace
