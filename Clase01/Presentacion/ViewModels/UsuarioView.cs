@@ -23,10 +23,10 @@ namespace Presentacion.ViewModels
 
         }
 
-        public List<DataUsuario> listaUsuario()
+        public List<DataUsuario> listaUsuarios()
         {
             UsuarioServicio servicio = new UsuarioServicio();
-            List<DataUsuario> listaUsuarios = servicio.obtenerUsuario();
+            List<DataUsuario> listaUsuarios = servicio.obtenerUsuarios();
             return listaUsuarios;
         }
     }

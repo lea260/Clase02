@@ -27,7 +27,7 @@ namespace Presentacion.Formularios
         private void btnListar_Click(object sender, EventArgs e)
         {
             UsuarioView usuarioView= new UsuarioView();
-            List<DataUsuario> lista = usuarioView.listaUsuario();
+            List<DataUsuario> lista = usuarioView.listaUsuarios();
             dgv.DataSource = lista;
             /*foreach(DataUsuario usr in lista)
             {

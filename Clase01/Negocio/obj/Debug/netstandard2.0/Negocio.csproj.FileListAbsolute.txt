@@ -1,12 +1,10 @@
-C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\bin\Debug\netstandard2.0\Negocio.deps.json
-C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\bin\Debug\netstandard2.0\Negocio.dll
-C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\bin\Debug\netstandard2.0\Negocio.pdb
+C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\obj\Debug\netstandard2.0\Negocio.csprojAssemblyReference.cache
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\obj\Debug\netstandard2.0\Negocio.AssemblyInfoInputs.cache
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\obj\Debug\netstandard2.0\Negocio.AssemblyInfo.cs
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\obj\Debug\netstandard2.0\Negocio.csproj.CoreCompileInputs.cache
-C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\obj\Debug\netstandard2.0\Negocio.dll
-C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\obj\Debug\netstandard2.0\Negocio.pdb
-C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\obj\Debug\netstandard2.0\Negocio.csprojAssemblyReference.cache
+C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\bin\Debug\netstandard2.0\Negocio.deps.json
+C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\bin\Debug\netstandard2.0\Negocio.dll
+C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\bin\Debug\netstandard2.0\Negocio.pdb
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\bin\Debug\netstandard2.0\Persistencia.dll
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\bin\Debug\netstandard2.0\MySql.Data.dll
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\bin\Debug\netstandard2.0\Google.Protobuf.dll
@@ -22,3 +20,5 @@ C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\bin\Debug\netst
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\bin\Debug\netstandard2.0\Persistencia.pdb
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\bin\Debug\netstandard2.0\MySql.Data.xml
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\obj\Debug\netstandard2.0\Negocio.csproj.CopyComplete
+C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\obj\Debug\netstandard2.0\Negocio.dll
+C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Negocio\obj\Debug\netstandard2.0\Negocio.pdb

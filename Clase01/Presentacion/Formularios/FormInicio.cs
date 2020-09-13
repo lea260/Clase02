@@ -28,9 +28,9 @@ namespace Presentacion.Formularios
         private void btnClick_Click(object sender, EventArgs e)
         {
             //llamo a conexion. 
-            UsuarioServicio servicio = new UsuarioServicio();
-            List<DataUsuario> list = servicio.obtenerUsuarios();
-
+            ProductosServicio servicio = new ProductosServicio();
+            List<DataProducto> list = servicio.obtenerProductos();
+            dgvProductos.DataSource = list;
             
         }
     }

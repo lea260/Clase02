@@ -6,18 +6,24 @@ namespace Negocio.Objetos
 {
     public class DataProducto
     {
-        private string id;
+        private long id_productos;
         private string codigo;
         private string descripcion;
-        private string precio;
-        
-        public string Id { get => id; set => id = value; }
-        public string Codigo { get => codigo; set => codigo = value; }             
-        public string Descripcion { get => descripcion; set => descripcion = value; }
-        public string Precio { get => precio; set => precio = value; }
+        private float precio;
+        private DateTime fecha;
+
 
         public DataProducto()
         {
         }
+       
+        public long Id_productos { get => id_productos; set => id_productos = value; }
+        public string Codigo { get => codigo; set => codigo = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public float Precio { get => precio; set => precio = value; }
+        public DateTime Fecha { get => fecha; set => fecha = value; }
     }
+    
+        
+    
 }
