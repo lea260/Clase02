@@ -30,7 +30,7 @@ namespace Presentacion.Formularios
         {
             //llamo a conexion. 
             ProductosServicio servicio = new ProductosServicio();
-            List<DataProducto> list = servicio.obtenerProductos();
+            List<DataProducto> list = servicio.ObtenerProductos();
             dgvProductos.DataSource = list;            
         }
 
@@ -41,7 +41,7 @@ namespace Presentacion.Formularios
             try
             {
                 indice = dgvProductos.CurrentRow.Index;
-            }catch (Exception e)
+            }catch 
             {
                 MessageBox.Show("seleccione un Producto a editar");
             }

@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Persistencia.Entidades;
+using Negocio.Objetos;
+using System.IO;
+using Persistencia.Repositorios;
+
+namespace Negocio.Modelo
+{
+    public class Producto
+    {
+        public void AgregarProducto(DataProducto producto)
+        {            
+            //transformo el DataProducto en DataEntidad
+            ProductoEntidad entidad = new ProductoEntidad();
+            entidad.Codigo = producto.Codigo;
+            entidad.Descripcion = producto.Descripcion;
+            entidad.Precio = producto.Precio;
+            entidad.Fecha = producto.Fecha;
+            //llamo a la persistencia
+            ProductosRepo repProdu = new ProductosRepo();
+            repProdu.AgregarProducto(entidad);
+
+        }
+    }
+}

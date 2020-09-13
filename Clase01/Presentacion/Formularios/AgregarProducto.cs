@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio.Modelo;
 using Negocio.Objetos;
 using Presentacion.Helpers;
+ 
 
 namespace Presentacion.Formularios
 {
     public partial class AgregarProducto : Form
     {
-        Modo modo;
+        private readonly Modo modo;
         public AgregarProducto()
         {
             InitializeComponent();               
@@ -56,6 +58,16 @@ namespace Presentacion.Formularios
             if (resultado == DialogResult.Yes)
             {
                 //llamar a agregar 
+                DateTime fecha = dtpfecha.Value.Date;
+                DataProducto prod = new DataProducto();
+                prod.Id_productos= long.Parse(txtid.Text);
+                prod.Codigo = txtcodigo.Text.ToString();
+                prod.Precio = float.Parse(txtprecio.Text.ToString());                 
+                prod.Descripcion = txtdescription.Text;
+                prod.Fecha = fecha;
+                Producto producto = new Producto();
+                producto.AgregarProducto(prod);
+                
             }
         }
 

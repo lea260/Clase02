@@ -12,7 +12,7 @@ namespace Negocio.Servicios
     /// </summary>
     public class ProductosServicio
     {
-        public List<DataProducto> obtenerProductos()
+        public List<DataProducto> ObtenerProductos()
         {
             List<DataProducto> lista = new List<DataProducto>();
             /*
@@ -38,18 +38,20 @@ namespace Negocio.Servicios
             List<ProductoEntidad> list2 = prodRep.ListarProductos();
             ///recorrer la lista 
             foreach (ProductoEntidad prod in list2)
-            {                
-                DataProducto producto = new DataProducto();
-                producto.Id_productos = prod.Id_productos;
-                producto.Codigo = prod.Codigo;
-                producto.Descripcion = prod.Descripcion;
-                producto.Precio = prod.Precio;
-                producto.Fecha = prod.Fecha;
+            {
+                DataProducto producto = new DataProducto
+                {
+                    Id_productos = prod.Id_productos,
+                    Codigo = prod.Codigo,
+                    Descripcion = prod.Descripcion,
+                    Precio = prod.Precio,
+                    Fecha = prod.Fecha
+                };
                 lista.Add(producto);
             }
             
             return lista;
-        }
+        }        
 
     }
 }

@@ -30,12 +30,14 @@ namespace Persistencia.Repositorios
                         string descripcion = reader.GetString(2);
                         string precio = reader.GetString(3);
                         string fecha = (reader[4] != DBNull.Value) ? reader.GetString(4) : "29/12/2012 0:00:00";
-                        ProductoEntidad prod = new ProductoEntidad();
-                        prod.Id_productos = long.Parse(id);
-                        prod.Codigo = codigo;
-                        prod.Descripcion = descripcion;
-                        prod.Precio = float.Parse(precio);
-                        DateTime fechaD = DateTime.ParseExact(fecha, "dd/MM/yyyy H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                        ProductoEntidad prod = new ProductoEntidad
+                        {
+                            Id_productos = long.Parse(id),
+                            Codigo = codigo,
+                            Descripcion = descripcion,
+                            Precio = float.Parse(precio)
+                        };
+                        DateTime fechaD = DateTime.ParseExact(fecha, "d/M/yyyy H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                         prod.Fecha = fechaD;
                         list.Add(prod);
                     }
@@ -54,6 +56,35 @@ namespace Persistencia.Repositorios
                 } 
             }
             return list;
-        }        
-    }
-}
+        }
+        public void AgregarProducto(ProductoEntidad entidad)
+        {
+            MySqlConnection conexion = null;
+            try
+            {
+                conexion = ConexionDB.GetConexion();
+                conexion.Open();
+                string sql = "insert into productos (codigo, descripcion,precio,fecha) values " +
+                        "(@codigo, @descripcion, @precio, @fecha)";
+                MySqlCommand comando = new MySqlCommand(sql, conexion);
+                comando.Parameters.AddWithValue("@codigo", entidad.Codigo);
+                comando.Parameters.AddWithValue("@descripcion", entidad.Descripcion);
+                comando.Parameters.AddWithValue("@precio", entidad.Precio);
+                comando.Parameters.AddWithValue("@fecha", entidad.Fecha);
+                comando.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                string mensaje = ex.ToString();
+                Console.WriteLine("hola" + mensaje);
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+    }//end clase
+}//end namespace
