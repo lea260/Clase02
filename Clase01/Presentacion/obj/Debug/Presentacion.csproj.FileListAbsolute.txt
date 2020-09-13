@@ -3,7 +3,6 @@ C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
-C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\bin\Debug\Presentacion.exe.config
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\bin\Debug\Presentacion.exe
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\bin\Debug\Presentacion.pdb
