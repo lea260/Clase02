@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Negocio", "Negocio\Negocio.
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentacion", "Presentacion\Presentacion.csproj", "{D2331543-7E4F-49AF-8609-3207CE747748}"
+	ProjectSection(ProjectDependencies) = postProject
+		{265AB625-C444-4931-9F9B-8BDC56BC83F8} = {265AB625-C444-4931-9F9B-8BDC56BC83F8}
+		{5770E33A-BDA7-4BBD-A90F-0D2E26F7C2D0} = {5770E33A-BDA7-4BBD-A90F-0D2E26F7C2D0}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistencia", "Persistencia\Persistencia.csproj", "{265AB625-C444-4931-9F9B-8BDC56BC83F8}"
 EndProject

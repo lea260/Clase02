@@ -27,3 +27,4 @@ C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\leandro\Documents\Programacion3\01clase\Clase01\Presentacion\obj\Debug\Presentacion.csprojAssemblyReference.cache
