@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.btnClick = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.dataProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idproductosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataProductoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +54,7 @@
             // dgvProductos
             // 
             this.dgvProductos.AllowUserToAddRows = false;
+            this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.AutoGenerateColumns = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -65,10 +66,16 @@
             this.dgvProductos.DataSource = this.dataProductoBindingSource;
             this.dgvProductos.Location = new System.Drawing.Point(44, 150);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(984, 150);
+            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProductos.Size = new System.Drawing.Size(1022, 150);
             this.dgvProductos.TabIndex = 1;
+            // 
+            // dataProductoBindingSource
+            // 
+            this.dataProductoBindingSource.DataSource = typeof(Negocio.Objetos.DataProducto);
             // 
             // idproductosDataGridViewTextBoxColumn
             // 
@@ -76,6 +83,7 @@
             this.idproductosDataGridViewTextBoxColumn.HeaderText = "Id_productos";
             this.idproductosDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idproductosDataGridViewTextBoxColumn.Name = "idproductosDataGridViewTextBoxColumn";
+            this.idproductosDataGridViewTextBoxColumn.ReadOnly = true;
             this.idproductosDataGridViewTextBoxColumn.Width = 125;
             // 
             // codigoDataGridViewTextBoxColumn
@@ -84,15 +92,17 @@
             this.codigoDataGridViewTextBoxColumn.HeaderText = "Codigo";
             this.codigoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
             this.codigoDataGridViewTextBoxColumn.Width = 125;
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
+            this.descripcionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.Width = 125;
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // precioDataGridViewTextBoxColumn
             // 
@@ -100,6 +110,7 @@
             this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
             this.precioDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
             this.precioDataGridViewTextBoxColumn.Width = 125;
             // 
             // fechaDataGridViewTextBoxColumn
@@ -108,11 +119,8 @@
             this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
             this.fechaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataProductoBindingSource
-            // 
-            this.dataProductoBindingSource.DataSource = typeof(Negocio.Objetos.DataProducto);
             // 
             // FormInicio
             // 
@@ -133,11 +141,11 @@
 
         private System.Windows.Forms.Button btnClick;
         private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.BindingSource dataProductoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idproductosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource dataProductoBindingSource;
     }
 }
