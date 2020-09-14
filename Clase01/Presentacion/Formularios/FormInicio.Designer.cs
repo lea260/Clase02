@@ -31,13 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.btnClick = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.idproductosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtConsulta = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataProductoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -71,8 +73,18 @@
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(1022, 150);
+            this.dgvProductos.Size = new System.Drawing.Size(1173, 398);
             this.dgvProductos.TabIndex = 1;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(467, 102);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(157, 23);
+            this.btnEditar.TabIndex = 2;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // idproductosDataGridViewTextBoxColumn
             // 
@@ -123,21 +135,30 @@
             // 
             this.dataProductoBindingSource.DataSource = typeof(Negocio.Objetos.DataProducto);
             // 
-            // btnEditar
+            // btnNuevo
             // 
-            this.btnEditar.Location = new System.Drawing.Point(682, 102);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(157, 23);
-            this.btnEditar.TabIndex = 2;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.btnNuevo.Location = new System.Drawing.Point(664, 102);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 3;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // txtConsulta
+            // 
+            this.txtConsulta.Location = new System.Drawing.Point(44, 102);
+            this.txtConsulta.Name = "txtConsulta";
+            this.txtConsulta.Size = new System.Drawing.Size(216, 22);
+            this.txtConsulta.TabIndex = 4;
             // 
             // FormInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1276, 497);
+            this.ClientSize = new System.Drawing.Size(1268, 560);
+            this.Controls.Add(this.txtConsulta);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.btnClick);
@@ -146,6 +167,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataProductoBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -160,5 +182,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.TextBox txtConsulta;
     }
 }

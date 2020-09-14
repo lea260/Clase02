@@ -21,19 +21,44 @@ namespace Presentacion.Formularios
         {
             InitializeComponent();               
         }
-        public AgregarProducto(DataProducto prod, Modo modo)
+        /// <summary>
+        /// se usa para agregar
+        /// </summary>
+        /// <param name="modo"></param>
+        public AgregarProducto(Modo modo)
         {
             InitializeComponent();
             this.modo = modo;
+            this.Text = "Agregar Nuevo Producto";
+            groupProd.Text = "Agregar Nuevo Producto";
+            // ocultar el boton de editar
+            btnEditar.Enabled = false;
+            btnEditar.Visible = false;
+        }
+        /// <summary>
+        /// se usa para editar
+        /// </summary>
+        /// <param name="prod"></param>
+        /// <param name="modo"></param>
+        public AgregarProducto(DataProducto prod, Modo modo)
+        {
+
+            InitializeComponent();
+            this.modo = modo;
+            this.Text = "Editar Producto";
+            groupProd.Text = "Editar Producto";
             Iniciar(prod);
+            // ocultar el boton de agregar
+            btnAgregar.Enabled = false;
+            txtid.Visible = false;
         }
 
         public void Iniciar()
         {
-            txtid.Text = "12";
-            txtcodigo.Text = "codigo";
-            txtprecio.Text = "asdf";
-            txtdescription.Text = "dfdf";
+            txtid.Text = "";
+            txtcodigo.Text = "";
+            txtprecio.Text = "";
+            txtdescription.Text = "";
             dtpfecha.Value = new DateTime(2020, 7, 29);
         }
         public void Iniciar(DataProducto prod)
@@ -43,7 +68,9 @@ namespace Presentacion.Formularios
             txtprecio.Text = prod.Precio.ToString();
             txtdescription.Text = prod.Descripcion;
             dtpfecha.Value = prod.Fecha;
+            
         }
+
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -55,7 +82,10 @@ namespace Presentacion.Formularios
         {
             DialogResult resultado = MessageBox.Show("seguro que desea\r\n agregar", "salir",
                 MessageBoxButtons.YesNoCancel);
-            if (resultado == DialogResult.Yes)
+            if (resultado == DialogResult.Yes &&
+                txtcodigo.Text.Trim()!= string.Empty &&
+                txtdescription.Text.Trim() != string.Empty &&
+                txtprecio.Text.Trim() != string.Empty)
             {
                 //llamar a agregar 
                 DateTime fecha = dtpfecha.Value.Date;
@@ -66,8 +96,7 @@ namespace Presentacion.Formularios
                 prod.Descripcion = txtdescription.Text;
                 prod.Fecha = fecha;
                 Producto producto = new Producto();
-                producto.AgregarProducto(prod);
-                
+                producto.AgregarProducto(prod);                
             }
         }
 
@@ -80,7 +109,10 @@ namespace Presentacion.Formularios
         {
             DialogResult resultado = MessageBox.Show("seguro que desea\r\n editar", "salir",
                 MessageBoxButtons.YesNoCancel);
-            if (resultado == DialogResult.Yes)
+            if (resultado == DialogResult.Yes &&
+                txtcodigo.Text.Trim() != string.Empty &&
+                txtdescription.Text.Trim() != string.Empty &&
+                txtprecio.Text.Trim() != string.Empty)
             {
                 //llamar a agregar 
                 DateTime fecha = dtpfecha.Value.Date;

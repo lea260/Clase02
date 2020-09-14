@@ -28,9 +28,17 @@ namespace Presentacion.Formularios
 
         private void btnClick_Click(object sender, EventArgs e)
         {
-            //llamo a conexion. 
+            //llamo a conexion.             
+            string consulta = txtConsulta.Text;
+            if (consulta.Trim()!= string.Empty)
+            {
+                consulta = txtConsulta.Text;
+            } else
+            {
+                consulta = null;
+            }
             ProductosServicio servicio = new ProductosServicio();
-            List<DataProducto> list = servicio.ObtenerProductos();
+            List<DataProducto> list = servicio.ObtenerProductos(consulta);
             dgvProductos.DataSource = list;            
         }
 
@@ -63,6 +71,12 @@ namespace Presentacion.Formularios
                 form.Show();
             }
             
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Form form = new AgregarProducto(Modo.Agregar);
+            form.Show();
         }
 
         /*private void btnAgregar_Click(object sender, EventArgs e)

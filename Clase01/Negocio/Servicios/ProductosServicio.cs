@@ -12,7 +12,7 @@ namespace Negocio.Servicios
     /// </summary>
     public class ProductosServicio
     {
-        public List<DataProducto> ObtenerProductos()
+        public List<DataProducto> ObtenerProductos(string consulta)
         {
             List<DataProducto> lista = new List<DataProducto>();
             /*
@@ -35,7 +35,7 @@ namespace Negocio.Servicios
             lista.Add(prod2);
             */
             ProductosRepo prodRep = new ProductosRepo();            
-            List<ProductoEntidad> list2 = prodRep.ListarProductos();
+            List<ProductoEntidad> list2 = prodRep.ListarProductos(consulta);
             ///recorrer la lista 
             foreach (ProductoEntidad prod in list2)
             {

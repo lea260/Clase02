@@ -8,7 +8,7 @@ namespace Persistencia.Repositorios
 {
     public class ProductosRepo
     {        
-        public List<ProductoEntidad> ListarProductos()
+        public List<ProductoEntidad> ListarProductos(string consulta=null)
         {
             List<ProductoEntidad> list = new List<ProductoEntidad>();
             MySqlConnection conexion = null;
@@ -17,8 +17,25 @@ namespace Persistencia.Repositorios
                 MySqlDataReader reader = null;
                 conexion = ConexionDB.GetConexion();
                 conexion.Open();
-                string sql = "SELECT id_productos, codigo,descripcion,precio,fecha FROM productos";
+                string sql;
+                if (consulta == null)
+                {
+                    sql = "SELECT id_productos, codigo,descripcion,precio,fecha FROM productos";
+                }
+                else
+                {
+                    sql = "SELECT id_productos, codigo,descripcion,precio,fecha FROM productos " +
+                        "WHERE codigo LIKE @consulta OR descripcion LIKE @consulta";
+
+                }
+
+                string searchTerm = string.Format("%{0}%", consulta);
+                
+                
+                //Command.Parameters.Add(new SqlParameter("@name", searchTerm));
+
                 MySqlCommand comando = new MySqlCommand(sql, conexion);
+                comando.Parameters.AddWithValue("@consulta", searchTerm);
                 reader = comando.ExecuteReader();
                 if (reader.HasRows)
                 {
