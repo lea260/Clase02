@@ -43,9 +43,9 @@ namespace Persistencia.Repositorios
                     {
                         
                         string id = reader.GetString(0);
-                        string codigo = reader.GetString(1);
-                        string descripcion = reader.GetString(2);
-                        string precio = reader.GetString(3);
+                        string codigo = (reader[2] != DBNull.Value) ? reader.GetString(2) : "cod"; ;
+                        string descripcion = (reader[2] != DBNull.Value) ? reader.GetString(2) : "";
+                        string precio = (reader[3] != DBNull.Value) ? reader.GetString(3) : "25";
                         string fecha = (reader[4] != DBNull.Value) ? reader.GetString(4) : "29/12/2012 0:00:00";
                         ProductoEntidad prod = new ProductoEntidad
                         {
@@ -89,6 +89,8 @@ namespace Persistencia.Repositorios
                 comando.Parameters.AddWithValue("@precio", entidad.Precio);
                 comando.Parameters.AddWithValue("@fecha", entidad.Fecha);
                 comando.ExecuteNonQuery();
+                //obtiene el ultimo id ingresado
+                long id = comando.LastInsertedId;                
             }
             catch (MySqlException ex)
             {
