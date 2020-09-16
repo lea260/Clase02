@@ -50,7 +50,7 @@ namespace Presentacion.Formularios
             Iniciar(prod);
             // ocultar el boton de agregar
             btnAgregar.Enabled = false;
-            txtid.Visible = false;
+            txtid.Enabled = false;
         }
 
         public void Iniciar()
@@ -124,6 +124,20 @@ namespace Presentacion.Formularios
                 prod.Fecha = fecha;
                 Producto producto = new Producto();
                 producto.EditarProducto(prod);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            //eliminar el articulo de Id pasado
+            DialogResult resultado = MessageBox.Show("seguro que desea\r\n eliminar", "salir",
+                MessageBoxButtons.YesNoCancel);
+            if (resultado == DialogResult.Yes)
+            {
+                //llamar a agregar                 
+                long idproducto = long.Parse(txtid.Text);
+                Producto producto = new Producto();
+                producto.EliminarProducto(idproducto);                
             }
         }
     }

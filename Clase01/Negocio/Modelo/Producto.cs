@@ -35,7 +35,12 @@ namespace Negocio.Modelo
             //llamo a la persistencia
             ProductosRepo repProdu = new ProductosRepo();
             repProdu.EditarProducto(entidad);
+        }
 
+        public void EliminarProducto(long idproducto)
+        {
+            ProductosRepo repProdu = new ProductosRepo();
+            repProdu.EliminarProducto(idproducto);
         }
     }
 }

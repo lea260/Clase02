@@ -43,10 +43,10 @@ namespace Persistencia.Repositorios
                     {
                         
                         string id = reader.GetString(0);
-                        string codigo = (reader[2] != DBNull.Value) ? reader.GetString(2) : "cod"; ;
+                        string codigo = (reader[1] != DBNull.Value) ? reader.GetString(1) : ""; ;
                         string descripcion = (reader[2] != DBNull.Value) ? reader.GetString(2) : "";
-                        string precio = (reader[3] != DBNull.Value) ? reader.GetString(3) : "25";
-                        string fecha = (reader[4] != DBNull.Value) ? reader.GetString(4) : "29/12/2012 0:00:00";
+                        string precio = (reader[3] != DBNull.Value) ? reader.GetString(3) : "0";
+                        string fecha = (reader[4] != DBNull.Value) ? reader.GetString(4) : "1/1/2000 0:00:00";
                         ProductoEntidad prod = new ProductoEntidad
                         {
                             Id_productos = long.Parse(id),
@@ -123,6 +123,32 @@ namespace Persistencia.Repositorios
                 comando.Parameters.AddWithValue("@precio", entidad.Precio);
                 comando.Parameters.AddWithValue("@fecha", entidad.Fecha);
                 comando.Parameters.AddWithValue("@id", entidad.Id_productos);
+                comando.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                string mensaje = ex.ToString();
+                Console.WriteLine("hola" + mensaje);
+            }
+            finally
+            {
+                if (conexion != null)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+        public void EliminarProducto(long idproductos)
+        {
+            MySqlConnection conexion = null;
+            try
+            {
+                conexion = ConexionDB.GetConexion();
+                conexion.Open();
+                string sql = "delete from productos where id_productos=@id";
+                MySqlCommand comando = new MySqlCommand(sql, conexion);                
+                comando.Parameters.AddWithValue("@id", idproductos);
                 comando.ExecuteNonQuery();
             }
             catch (MySqlException ex)
