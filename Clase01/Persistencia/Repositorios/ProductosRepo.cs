@@ -6,7 +6,7 @@ using Persistencia.Entidades;
 
 namespace Persistencia.Repositorios
 {
-    public class ProductosRepo
+    public class ProductosRepo 
     {        
         public List<ProductoEntidad> ListarProductos(string consulta=null)
         {

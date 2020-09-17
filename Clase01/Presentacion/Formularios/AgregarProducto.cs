@@ -90,7 +90,7 @@ namespace Presentacion.Formularios
                 //llamar a agregar 
                 DateTime fecha = dtpfecha.Value.Date;
                 DataProducto prod = new DataProducto();
-                prod.Id_productos= long.Parse(txtid.Text);
+                //prod.Id_productos= long.Parse(txtid.Text);
                 prod.Codigo = txtcodigo.Text.ToString();
                 prod.Precio = float.Parse(txtprecio.Text.ToString());                 
                 prod.Descripcion = txtdescription.Text;
