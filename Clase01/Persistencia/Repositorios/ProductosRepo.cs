@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using MySql.Data.MySqlClient;
 using Persistencia.Entidades;
+using Persistencia.Contratos;
 
 namespace Persistencia.Repositorios
 {
-    public class ProductosRepo 
+    public class ProductosRepo : IProducto
     {        
         public List<ProductoEntidad> ListarProductos(string consulta=null)
         {
@@ -43,6 +44,15 @@ namespace Persistencia.Repositorios
                     {
                         
                         string id = reader.GetString(0);
+                        /*string codigo = (reader[1] != DBNull.Value) ? reader.GetString(1) : ""; ;
+                        if (reader[1] != DBNull.Value)
+                        {
+                            string codigo = reader.GetString(1)
+                        }
+                        else
+                        {
+                            codigo = "";
+                        }*/
                         string codigo = (reader[1] != DBNull.Value) ? reader.GetString(1) : ""; ;
                         string descripcion = (reader[2] != DBNull.Value) ? reader.GetString(2) : "";
                         string precio = (reader[3] != DBNull.Value) ? reader.GetString(3) : "0";
@@ -105,8 +115,6 @@ namespace Persistencia.Repositorios
                 }
             }
         }
-
-
         public void EditarProducto(ProductoEntidad entidad)
         {
             MySqlConnection conexion = null;
@@ -138,7 +146,6 @@ namespace Persistencia.Repositorios
                 }
             }
         }
-
         public void EliminarProducto(long idproductos)
         {
             MySqlConnection conexion = null;
